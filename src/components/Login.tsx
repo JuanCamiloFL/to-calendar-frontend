@@ -21,9 +21,13 @@ export const Login: React.FC = () => {
             localStorage.setItem('token', token);
             console.log('Redireccionando...');
             // Redirigir a la nueva página después de un inicio de sesión exitoso
-            navigate('/pagina-nueva'); // Asegúrate de que esta ruta exista en tu archivo de rutas
+            navigate('/pagina-nueva');
         } catch (error: any) {
             setMessage('Error en el inicio de sesion' + error.response.data.message)
+            console.log('Redireccionando...');
+            // Redirigir a registro en caso de error
+            navigate('/registro');
+
         }
     }
     return (
